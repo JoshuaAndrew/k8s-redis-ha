@@ -4,8 +4,8 @@ set -eux
 
 namespace="$(< /var/run/secrets/kubernetes.io/serviceaccount/namespace)"
 readonly namespace
-readonly service_domain="_$SERVICE_PORT._tcp.$SERVICE.$namespace.svc.cluster.local"
-readonly service_sentinel_domain="_$SENTINEL_PORT._tcp.$SENTINEL.$namespace.svc.cluster.local"
+readonly service_domain="_$SERVICE_PORT._tcp.$SERVICE.$namespace.svc.$CLUSTER_DOMAIN"
+readonly service_sentinel_domain="_$SENTINEL_PORT._tcp.$SENTINEL.$namespace.svc.$CLUSTER_DOMAIN"
 : ${REDIS_PASSWORD:=redis}
 
 redis_info () {
