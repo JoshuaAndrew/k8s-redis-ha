@@ -1,6 +1,6 @@
-FROM debian:jessie
+FROM bash:4
 
-RUN apt-get update && apt-get install -y bc dnsutils redis-tools
+RUN apk add bc bind-tools redis
 
 COPY ["run.sh", "/"]
 

@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM bash:4
 
 ADD dig-a /dig-a
 ADD dig-srv /dig-srv
